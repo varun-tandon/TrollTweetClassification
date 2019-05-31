@@ -822,7 +822,7 @@ We want to find
 
 Googling around for the percentage of tweets posted by bots indicates some alarming statistics (see: https://www.pewresearch.org/fact-tank/2018/04/09/5-things-to-know-about-bots-on-twitter/), but none of these statistics give a valid prior for the probability of a tweet being posted by a bot. To represent this ambiguity, we will say that
 
-<img src="https://latex.codecogs.com/gif.latex?P(N) = P(B) = 0.5"/>
+<img src="https://latex.codecogs.com/gif.latex?P(N)%20=%20P(B)%20=%200.5"/>
 
 We observe that this cancels out in our equation above, so we are left with
 
