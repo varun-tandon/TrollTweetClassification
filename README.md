@@ -126,19 +126,6 @@ troll_wf
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -477,19 +464,6 @@ twit_wf
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -813,28 +787,28 @@ twit_wf
 
 ## Classification
 
-Consider the words in a given tweet as $T$. Let us also denote the troll/bot writer as $B$ and the normal twitter user as $N$. 
+Consider the words in a given tweet as <img src="https://latex.codecogs.com/gif.latex?T"/>. Let us also denote the troll/bot writer as <img src="https://latex.codecogs.com/gif.latex?B"/> and the normal twitter user as <img src="https://latex.codecogs.com/gif.latex?N"/>. 
 
 We want to find
 
-$$\frac{P(N|T)}{P(B|T)}$$  
-$$ = \frac{P(T|N)P(N)}{P(T|B)P(B)}$$
+<img src="https://latex.codecogs.com/gif.latex?\frac{P(N|T)}{P(B|T)}"/>  
+<img src="https://latex.codecogs.com/gif.latex?\frac{P(T|N)P(N)}{P(T|B)P(B)}"/>
 
 Googling around for the percentage of tweets posted by bots indicates some alarming statistics (see: https://www.pewresearch.org/fact-tank/2018/04/09/5-things-to-know-about-bots-on-twitter/), but none of these statistics give a valid prior for the probability of a tweet being posted by a bot. To represent this ambiguity, we will say that
 
-$$P(N) = P(B) = 0.5$$
+<img src="https://latex.codecogs.com/gif.latex?P(N)%20=%20P(B)%20=%200.5"/>
 
 We observe that this cancels out in our equation above, so we are left with
 
-$$\frac{P(T|N)}{P(T|B)}$$
+<img src="https://latex.codecogs.com/gif.latex?\frac{P(T|N)}{P(T|B)}" />
 
 As we did in class, we can rewrite these using multinomials, and the multinomial terms in the numerator and denominator cancel, yielding
 
-$$\frac{\prod_i p_{i}^{c_i}}{\prod_i q_{i}^{c_i}}$$
+<img src="https://latex.codecogs.com/gif.latex?\frac{\prod_i%20p_{i}^{c_i}}{\prod_i%20q_{i}^{c_i}}" />
 
 We can use logarithms to make this computationally stable, and write
 
-$$\log(\frac{P(T|N)}{P(T|B)}) = \log(\frac{\prod_i p_{i}^{c_i}}{\prod_i q_{i}^{c_i}}) = \sum_i c_i\log(p_i) - \sum_i c_i \log(q_i)$$
+<img src="https://latex.codecogs.com/gif.latex?\log(\frac{P(T|N)}{P(T|B)})%20=%20\log(\frac{\prod_i%20p_{i}^{c_i}}{\prod_i%20q_{i}^{c_i}})%20=%20\sum_i%20c_i\log(p_i)%20-%20\sum_i^{c_i}%20\log(q_i)" />
 
 (To reiterate, this process is identical to the process done in lecture with the Federalist Papers, so some steps in the math were ommited)
 
