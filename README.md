@@ -1,4 +1,3 @@
-
 # Forensic Linguistics Applied To Tweets By Bots and Trolls
 Project by Varun Tandon as a part of Stanford's CS109 Final Project. 
 
@@ -55,12 +54,6 @@ troll_df = pd.read_csv('tweets.csv')
 # Clean the text
 troll_df['text'] = clean_tweet(troll_df['text'])
 ```
-
-We notice "rt" ranking as the most frequent word here, and in this case "rt" indicates a "retweet" by a Twitter user. At this point, I'm not sure whether or not to leave it in. On the one hand, perhaps a bot is more/less likely to retweet. On the other hand, this might just ruin the accuracy of predictions because it doesn't have any bearing on the content of the tweet. 
-
-For now, I'm going to leave it in, and then later on I'm going to see how it affects the prediction accuracy to remove it. 
-
-We also notice that "trump" and "clinton" rank fairly highly on the word frequencies list. This seems to be a good sign, because assuming that tweets are similar to normal human language, these should not be very frequent terms in normal tweets. We'll verify that hypothesis when generating word frequencies on a random sample of Twitter data. 
 
 ## Clean Data (Rest of Twitter)
 
@@ -445,7 +438,11 @@ troll_wf
 <p>234118 rows × 2 columns</p>
 </div>
 
+We notice "rt" ranking as the most frequent word here, and in this case "rt" indicates a "retweet" by a Twitter user. At this point, I'm not sure whether or not to leave it in. On the one hand, perhaps a bot is more/less likely to retweet. On the other hand, this might just ruin the accuracy of predictions because it doesn't have any bearing on the content of the tweet. 
 
+For now, I'm going to leave it in, and then later on I'm going to see how it affects the prediction accuracy to remove it. 
+
+We also notice that "trump" and "clinton" rank fairly highly on the word frequencies list. This seems to be a good sign, because assuming that tweets are similar to normal human language, these should not be very frequent terms in normal tweets. We'll verify that hypothesis when generating word frequencies on a random sample of Twitter data. 
 
 
 ```python
