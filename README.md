@@ -788,7 +788,8 @@ Consider the words in a given tweet as <img src="https://latex.codecogs.com/gif.
 
 We want to find
 
-<img src="https://latex.codecogs.com/gif.latex?\frac{P(N|T)}{P(B|T)}"/>  
+<div style="text-align:center"><img src="https://latex.codecogs.com/gif.latex?\frac{P(N|T)}{P(B|T)}"/> </div>
+
 <img src="https://latex.codecogs.com/gif.latex?\frac{P(T|N)P(N)}{P(T|B)P(B)}"/>
 
 Googling around for the percentage of tweets posted by bots indicates some alarming statistics (see: https://www.pewresearch.org/fact-tank/2018/04/09/5-things-to-know-about-bots-on-twitter/), but none of these statistics give a valid prior for the probability of a tweet being posted by a bot. To represent this ambiguity, we will say that
